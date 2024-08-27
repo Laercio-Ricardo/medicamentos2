@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Dosagem de Medicamentos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora de Dosagem de Medicamentos</h1>
+        </header>
+
+        <!-- Barra de Pesquisa de Medicamentos -->
+        <section class="section">
+            <h2><i class="fas fa-search"></i> Buscar Medicamentos</h2>
+            <div class="autocomplete-container">
+                <input type="text" id="search-bar" placeholder="Digite o nome do medicamento...">
+                <div id="autocomplete-list" class="autocomplete-list"></div>
+            </div>
+        </section>
+
+        <!-- Formulário de Dosagem -->
+        <section class="section">
+            <h2><i class="fas fa-capsules"></i> Cálculo de Dosagem</h2>
+            <form id="medication-form">
+                <div class="form-group">
+                    <label for="medication">Nome do Medicamento:</label>
+                    <select id="medication" required>
+                        <!-- As opções serão preenchidas automaticamente -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dose">Dose Prescrita (mg):</label>
+                    <input type="number" id="dose" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="concentration">Concentração Disponível (mg/mL):</label>
+                    <input type="number" id="concentration" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="volume">Volume Disponível (mL):</label>
+                    <input type="number" id="volume" required>
+                </div>
+
+                <button type="button" onclick="calculateDosage()">Calcular Dosagem</button>
+            </form>
+
+            <div id="result" class="result">
+                <p id="result-text"></p>
+            </div>
+        </section>
+
+        <!-- Formulário de Gotejamento -->
+        <section class="section">
+            <h2><i class="fas fa-tachometer-alt"></i> Cálculo de Gotejamento</h2>
+            <form id="infusion-form">
+                <div class="form-group">
+                    <label for="infusion-volume">Volume da Infusão (mL):</label>
+                    <input type="number" id="infusion-volume" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="infusion-time">Tempo da Infusão (horas):</label>
+                    <input type="number" id="infusion-time" required>
+                </div>
+
+                <button type="button" onclick="calculateInfusionRate()">Calcular Gotejamento</button>
+            </form>
+
+            <div id="infusion-result" class="result">
+                <p id="infusion-result-text"></p>
+            </div>
+        </section>
+
+        <!-- Histórico -->
+        <section class="section">
+            <h2><i class="fas fa-history"></i> Histórico de Cálculos</h2>
+            <ul id="history-list"></ul>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>Feito por <a href="https://www.linkedin.com/in/laerciolima/" target="_blank"><i class="fab fa-linkedin"></i> Laércio Ricardo Lima</a></p>
+            <p><a href="https://github.com/laerciolima" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="teste.js"></script>
+</body>
+</html>
